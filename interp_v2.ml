@@ -100,6 +100,7 @@ let rec interp expr env =
     | MultC(l, r) -> num_mult (interp l env) (interp r env)
     | LamC(a, b) -> ClosV(a, b, env)
 
+(* ------------TESTS------------------ *)
 let test1 = 
     let test = PlusC( NumC 24, AppC( LamC( "x", NumC 5), NumC 22)) in
     let fds = mt_env in
